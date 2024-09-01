@@ -20,9 +20,8 @@ const AboutUs = () => {
             <p className="text-lg mt-3">
               <span className="font-bold text-red-500">All Tax Solutions</span> was founded in 2024 by <span className="font-bold text-red-500">Umang Vishnoi</span>, a seasoned tax professional with
               over 5 years of experience in accounting and tax services. After working with numerous clients and witnessing the confusion and anxiety that tax season often brings,{" "}
-              <span className="font-bold text-red-500">Umang</span>
-              realized there was a need for a more personalized, client-focused approach to tax filing. This led to the creation of <span className="font-bold text-red-500">All Tax Solutions</span>, a
-              firm dedicated to simplifying the tax process and delivering outstanding service.
+              <span className="font-bold text-red-500">Umang</span> realized there was a need for a more personalized, client-focused approach to tax filing. This led to the creation of{" "}
+              <span className="font-bold text-red-500">All Tax Solutions</span>, a firm dedicated to simplifying the tax process and delivering outstanding service.
             </p>
           </div>
           <div className="mt-10">
