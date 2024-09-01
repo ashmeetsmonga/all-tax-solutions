@@ -14,6 +14,11 @@ const ConnectForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!name || !phone || !email || !query) {
+      toast.error("Please fill all details");
+      return;
+    }
     const formData = new FormData();
     const date = new Date();
     const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
@@ -41,7 +46,7 @@ const ConnectForm = () => {
       <Input value={phone} onChange={(e) => setPhone(e.target.value)} className="max-w-[750px] p-6 placeholder:text-red-300 text-lg bg-white text-red-500" placeholder="Phone No. *" />
       <Input value={email} onChange={(e) => setEmail(e.target.value)} className="max-w-[750px] p-6 placeholder:text-red-300 text-lg bg-white text-red-500" placeholder="Email *" />
       <Input value={query} onChange={(e) => setQuery(e.target.value)} className="max-w-[750px] p-6 placeholder:text-red-300 text-lg bg-white text-red-500" placeholder="Query *" />
-      <Button className=" bg-white text-red-500 text-xl px-8 py-6">Submit</Button>
+      <Button className=" bg-white text-red-500 text-xl px-8 py-6 hover:bg-gray-200">Submit</Button>
     </form>
   );
 };
