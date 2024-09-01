@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const ConnectForm = () => {
   const [name, setName] = useState("");
@@ -24,11 +25,13 @@ const ConnectForm = () => {
     formData.append("Date", dateString);
     formData.append("Time", timeString);
 
+    const toastId = toast.loading("Submitting query");
     try {
       const { data } = await axios.post("https://script.google.com/macros/s/AKfycbzgdeNALlq63iz9NJPM9zKz_LzV-gfL5Egt19Uwgm1RYwLcLPq07oAdMp95UUG9gbdcbA/exec", formData);
-      console.log(data);
+      toast.success("Query submitted successfully", { id: toastId });
     } catch (e) {
       console.log(e);
+      toast.error("Something went wrong, please try later", { id: toastId });
     }
   };
 
